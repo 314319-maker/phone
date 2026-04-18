@@ -121,45 +121,42 @@
         </div>
        
     </nav>
-    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-slate-100 z-[60] shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.05)]">
-    <div class="flex overflow-x-auto no-scrollbar items-end px-2 pt-2 pb-2 gap-3">
-        
-        <a onclick="switchTab('inventory')" class="flex-shrink-0 flex flex-col items-center p-2 min-w-[3.5rem] text-slate-400 hover:text-sky-500 transition active:scale-95">
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-slate-100 z-[60] shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.05)] pb-safe">
+    <div class="grid grid-cols-5 items-end px-1 pt-2 pb-2">
+        <a onclick="switchTab('inventory')" class="flex flex-col items-center p-2 text-slate-400 hover:text-sky-500 transition active:scale-95 cursor-pointer">
             <span class="text-xl mb-1">🥦</span><span class="text-[10px] font-bold">庫存</span>
         </a>
-        
-        <a onclick="switchTab('recipes')" class="flex-shrink-0 flex flex-col items-center p-2 min-w-[3.5rem] text-slate-400 hover:text-sky-500 transition active:scale-95">
+        <a onclick="switchTab('recipes')" class="flex flex-col items-center p-2 text-slate-400 hover:text-sky-500 transition active:scale-95 cursor-pointer">
             <span class="text-xl mb-1">🍳</span><span class="text-[10px] font-bold">食譜</span>
         </a>
-
-        <a onclick="switchTab('calendar')" class="flex-shrink-0 flex flex-col items-center px-2 pb-2 min-w-[4rem]">
-            <div class="bg-sky-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg border-4 border-white -mt-4 transform active:scale-95 transition">
-                <span class="text-xl">📅</span>
+        <a onclick="switchTab('calendar')" class="flex flex-col items-center px-2 pb-2 relative cursor-pointer">
+            <div class="bg-sky-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg border-4 border-white absolute -top-8 transform active:scale-95 transition">
+                <span class="text-2xl">📅</span>
             </div>
-            <span class="text-[10px] font-bold text-sky-600 mt-1">效期</span>
+            <span class="text-[10px] font-bold text-sky-600 mt-6">效期</span>
         </a>
-
-        <a onclick="switchTab('shopping')" class="flex-shrink-0 flex flex-col items-center p-2 min-w-[3.5rem] text-slate-400 hover:text-sky-500 transition active:scale-95">
+        <a onclick="switchTab('shopping')" class="flex flex-col items-center p-2 text-slate-400 hover:text-sky-500 transition active:scale-95 cursor-pointer">
             <span class="text-xl mb-1">🛒</span><span class="text-[10px] font-bold">購物</span>
         </a>
-
-        <a onclick="switchTab('analytics')" class="flex-shrink-0 flex flex-col items-center p-2 min-w-[3.5rem] text-slate-400 hover:text-sky-500 transition active:scale-95">
-            <span class="text-xl mb-1">📊</span><span class="text-[10px] font-bold">數據</span>
+        <a onclick="document.getElementById('mobile-more-menu').classList.toggle('hidden')" class="flex flex-col items-center p-2 text-slate-400 hover:text-sky-500 transition active:scale-95 cursor-pointer relative">
+            <span class="text-xl mb-1">⭐</span><span class="text-[10px] font-bold">更多</span>
         </a>
-
-        <a onclick="switchTab('community')" class="flex-shrink-0 flex flex-col items-center p-2 min-w-[3.5rem] text-slate-400 hover:text-sky-500 transition active:scale-95">
-            <span class="text-xl mb-1">🤝</span><span class="text-[10px] font-bold">市集</span>
-        </a>
-        
-        <a onclick="switchTab('interactive')" class="flex-shrink-0 flex flex-col items-center p-2 min-w-[3.5rem] text-slate-400 hover:text-sky-500 transition active:scale-95">
-            <span class="text-xl mb-1">🏆</span><span class="text-[10px] font-bold">成就</span>
-        </a>
-        
-        <a onclick="switchTab('storybook')" class="flex-shrink-0 flex flex-col items-center p-2 min-w-[3.5rem] text-slate-400 hover:text-sky-500 transition active:scale-95">
-            <span class="text-xl mb-1">📖</span><span class="text-[10px] font-bold">繪本</span>
-        </a>
-
     </div>
+</div>
+
+<div id="mobile-more-menu" class="hidden md:hidden fixed bottom-20 right-4 bg-white rounded-xl shadow-xl border border-slate-100 p-2 z-[60] flex-col gap-1 w-36 animate-fade-up">
+    <a onclick="switchTab('analytics'); document.getElementById('mobile-more-menu').classList.add('hidden')" class="flex items-center gap-3 px-4 py-3 hover:bg-sky-50 rounded-lg text-sm font-bold text-slate-600 cursor-pointer">
+        📊 數據分析
+    </a>
+    <a onclick="switchTab('community'); document.getElementById('mobile-more-menu').classList.add('hidden')" class="flex items-center gap-3 px-4 py-3 hover:bg-sky-50 rounded-lg text-sm font-bold text-slate-600 cursor-pointer">
+        🤝 惜食市集
+    </a>
+    <a onclick="switchTab('interactive'); document.getElementById('mobile-more-menu').classList.add('hidden')" class="flex items-center gap-3 px-4 py-3 hover:bg-sky-50 rounded-lg text-sm font-bold text-slate-600 cursor-pointer">
+        🏆 趣味成就
+    </a>
+    <a onclick="switchTab('storybook'); document.getElementById('mobile-more-menu').classList.add('hidden')" class="flex items-center gap-3 px-4 py-3 hover:bg-sky-50 rounded-lg text-sm font-bold text-slate-600 cursor-pointer">
+        📖 繪本故事
+    </a>
 </div>
 
     <div class="flex-grow w-full pb-24 md:pb-0">
@@ -297,31 +294,32 @@
         <label class="text-sm font-bold text-gray-700">食材名稱</label>
         <input type="text" id="name" required placeholder="等待識別..." class="w-full mt-1 border border-slate-300 rounded-lg p-2.5 bg-white focus:border-sky-500 focus:ring-sky-500 outline-none">
     </div>
-    <div class="grid grid-cols-3 gap-3">
-        <div>
-            <label class="text-sm font-bold text-gray-700">種類</label>
-            <select id="type" class="w-full mt-1 border border-slate-300 rounded-lg p-2.5 bg-white text-sm outline-none">
-                <option value="蔬菜">蔬菜</option>
-                <option value="肉類">肉類</option>
-                <option value="海鮮">海鮮</option>
-                <option value="水果">水果</option>
-                <option value="奶製品">奶製品</option>
-                <option value="主食">主食</option>
-                <option value="調味料">調味料</option>
-                <option value="烘焙原料">烘焙原料</option>
-                <option value="中餐乾貨">中餐乾貨</option>
-                <option value="飲料">飲料</option>
-                <option value="其他">其他</option>
-            </select>
-        </div>
-        <div>
-            <label class="text-sm font-bold text-[#d97706]">📅 效期</label>
-            <input type="date" id="expiryDate" required class="w-full mt-1 border border-[#fcd34d] rounded-lg p-2.5 bg-[#fffbeb] text-sm text-gray-700 outline-none">
-        </div>
-        <div>
-            <label class="text-sm font-bold text-sky-600">🔢 數量</label>
-            <input type="number" id="quantity" value="1" min="1" max="99" required class="w-full mt-1 border border-sky-200 rounded-lg p-2.5 bg-sky-50 text-sm font-bold outline-none">
-        </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+    <div class="col-span-2 sm:col-span-1">
+        <label class="text-sm font-bold text-gray-700">種類</label>
+        <select id="type" class="w-full mt-1 border border-slate-300 rounded-lg p-2.5 bg-white text-sm outline-none">
+            <option value="蔬菜">蔬菜</option>
+            <option value="肉類">肉類</option>
+            <option value="海鮮">海鮮</option>
+            <option value="水果">水果</option>
+            <option value="奶製品">奶製品</option>
+            <option value="主食">主食</option>
+            <option value="調味料">調味料</option>
+            <option value="烘焙原料">烘焙原料</option>
+            <option value="中餐乾貨">中餐乾貨</option>
+            <option value="飲料">飲料</option>
+            <option value="其他">其他</option>
+        </select>
+    </div>
+    <div class="col-span-1">
+        <label class="text-sm font-bold text-[#d97706]">📅 效期</label>
+        <input type="date" id="expiryDate" required class="w-full mt-1 border border-[#fcd34d] rounded-lg p-2.5 bg-[#fffbeb] text-sm text-gray-700 outline-none">
+    </div>
+    <div class="col-span-1">
+        <label class="text-sm font-bold text-sky-600">🔢 數量</label>
+        <input type="number" id="quantity" value="1" min="1" max="99" required class="w-full mt-1 border border-sky-200 rounded-lg p-2.5 bg-sky-50 text-sm font-bold outline-none">
+    </div>
+</div>
     </div>
     <button type="submit" class="w-full mt-2 bg-[#0ea5e9] text-white py-3 rounded-lg font-bold shadow-md hover:bg-[#0284c7] transform transition active:scale-95 flex items-center justify-center gap-2">
         確認入庫
